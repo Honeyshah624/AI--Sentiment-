@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SentimentAI — AI Sentiment Analysis</title>
+  <meta name="description" content="SentimentAI — demo AI sentiment analysis for reviews" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER / NAV -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">Sentiment<span class="brand-accent">AI</span></a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul id="navLinks" class="nav-links">
+          <li><a class="nav-link" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#workflow">Workflow</a></li>
+          <li><a class="nav-link" href="#model">AI Model</a></li>
+          <li><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Hamburger for small screens -->
+        <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-label="Toggle menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1>AI-Powered Sentiment & Review Insights</h1>
+          <p class="lead">Quickly analyze text to detect positive, neutral, or negative sentiment. Built for projects, demos, and learning.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#model">Try Demo</a>
+            <a class="btn btn-ghost" href="#features">Features</a>
+          </div>
+        </div>
+        <div class="hero-right" aria-hidden="true">
+          <!-- Decorative SVG (keeps no external images) -->
+          <svg width="320" height="220" viewBox="0 0 640 440" class="hero-svg" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="640" height="440" rx="18" fill="#eef6ff"/>
+            <g transform="translate(90,80)">
+              <rect x="0" y="0" width="260" height="24" rx="8" fill="#2563eb" />
+              <rect x="0" y="40" width="200" height="18" rx="6" fill="#60a5fa" />
+              <circle cx="180" cy="130" r="48" fill="#0ea5a9" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About SentimentAI</h2>
+        <p class="lead">A compact demo that shows how text → API → model → result flow works. Perfect for academic demos and quick prototypes.</p>
+
+        <div class="two-col">
+          <div>
+            <h3>Purpose</h3>
+            <p>Teach and demonstrate sentiment analysis fundamentals: how to send text to a model and visualize the output.</p>
+          </div>
+          <div>
+            <h3>Free-friendly</h3>
+            <p>Designed to run on free tiers like GitHub Pages (frontend) and Render (backend) — no paid services required to demo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKFLOW -->
+    <section id="workflow" class="section">
+      <div class="container">
+        <h2>Workflow</h2>
+        <ol class="workflow">
+          <li><strong>Input:</strong> User types/pastes text in the frontend.</li>
+          <li><strong>Request:</strong> Frontend sends POST /analyze to backend.</li>
+          <li><strong>Model:</strong> Backend runs sentiment model (VADER or other) and returns label.</li>
+          <li><strong>Display:</strong> Frontend shows result and stores stats for dashboards.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- AI MODEL -->
+    <section id="model" class="section">
+      <div class="container">
+        <h2>Try the AI Sentiment Model</h2>
+        <p class="lead">Paste text and press <strong>Analyze</strong>. This demo calls your backend and displays sentiment.</p>
+
+        <div class="model-box">
+          <label for="reviewText" class="sr-only">Review text</label>
+          <textarea id="reviewText" placeholder="Type or paste a review..." aria-label="Review input"></textarea>
+
+          <div class="model-actions">
+            <button id="analyzeBtn" class="btn btn-primary">Analyze</button>
+            <button id="clearBtn" class="btn btn-ghost" type="button">Clear</button>
+          </div>
+
+          <div id="loader" class="loader" aria-hidden="true" hidden></div>
+
+          <div id="result" class="result" aria-live="polite" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section">
+      <div class="container">
+        <h2>Features</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <h4>Real-time</h4>
+            <p>Instant results for single or batch inputs.</p>
+          </div>
+          <div class="feature">
+            <h4>Extendable</h4>
+            <p>Replace VADER with transformer models when needed.</p>
+          </div>
+          <div class="feature">
+            <h4>Dashboard-ready</h4>
+            <p>Collect stats and visualize with charts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section">
+      <div class="container">
+        <h2>Pricing (Demo)</h2>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Free</h3>
+            <p>Basic demo + limited requests</p>
+            <p class="price">₹0 / month</p>
+            <a class="btn btn-outline" href="#contact">Get Started</a>
+          </div>
+
+          <div class="pricing-card highlight">
+            <h3>Pro</h3>
+            <p>Higher quota & dashboard</p>
+            <p class="price">₹499 / month</p>
+            <a class="btn btn-primary" href="#contact">Subscribe</a>
+          </div>
+
+          <div class="pricing-card">
+            <h3>Enterprise</h3>
+            <p>Custom SLAs & integrations</p>
+            <p class="price">Contact</p>
+            <a class="btn btn-outline" href="#contact">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="lead">Have questions or want to extend the project? Send a message.</p>
+
+        <form id="contactForm" class="contact-form" aria-label="Contact form">
+          <input id="contactName" name="name" type="text" placeholder="Your name" required />
+          <input id="contactEmail" name="email" type="email" placeholder="Your email" required />
+          <textarea id="contactMessage" name="message" placeholder="Your message" rows="4" required></textarea>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Send message</button>
+            <button type="reset" class="btn btn-ghost">Reset</button>
+          </div>
+          <div id="contactStatus" class="muted" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 SentimentAI — Student project demo</p>
+      <p class="muted">Built using HTML, CSS, JS and a Flask backend.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
