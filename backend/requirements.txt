@@ -1,0 +1,7 @@
+flask
+flask-cors
+textblob
+gunicorn
+python-dotenv
+nltk
+vaderSentiment
