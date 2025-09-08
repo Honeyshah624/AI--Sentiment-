@@ -148,6 +148,4 @@ Enjoy analyzing reviews and tracking sentiment trends!
 
 ---
 
-Feel free to copy-paste this into your **README.md** file, and it will guide users (or yourself) through the entire process from **local setup** to **live deployment**!
 
-Let me know if you need any changes or additions to it!
